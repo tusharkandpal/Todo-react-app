@@ -1,38 +1,103 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap");
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Balsamiq Sans", cursive;
+  outline: none;
+  border: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  line-height: 1.4;
+  background-color: #55b9f3
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a{
+  color: #333;
+  text-decoration: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.neu{
+  border-radius: 5px;
+background: #55b9f3;
+box-shadow:  5px 5px 2px #489dcf, 
+             -5px -5px 2px #62d5ff;
+}
+
+header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: #000;
+}
+
+h2{
+  padding: 10px;
+  font-size: 40px;
+}
+
+.todo-container{
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 30px;
+}
+
+.todo{
+  display: flex;
+  margin: 15px;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+button{
+  margin: 3px 8px;
+  cursor: pointer;
+  background: #55b9f3;
+}
+
+li{
+  list-style: none;
+  width: 300px;
+  font-size: 20px;
+  word-wrap: break-word;
+  margin: 3px;
+}
+
+form, .newTodo, .filter{
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+form input{
+  width: 300px;
+  height: 30px;
+  padding: 4px;
+  background-color: #55b9f3;
+  border-bottom: 2px solid black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.filter{
+  margin-left: 50px;
+}
+
+@media screen and (max-width: 500px) {
+  form{
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  form input{
+    width: 250px;
+  }
+  li{
+    width: 180px;
+  }
+  .filter{
+    margin: 0;
   }
 }
