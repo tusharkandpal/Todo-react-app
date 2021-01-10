@@ -55,15 +55,9 @@ function App() {
 
   }, [todos, status]); // when these variable changes
 
- 
-
-    
-    
-   
-
   return (
     <div className="app">
-      <header>
+      <header className='flex'>
         <i className="fas fa-clipboard-list fa-2x"></i>
         <h2> Todo App</h2>
       </header>

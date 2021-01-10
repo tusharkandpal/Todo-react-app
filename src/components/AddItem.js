@@ -25,8 +25,8 @@ const AddItem = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
     setStatus(e.target.value);
   };
   return (
-    <form>
-      <div className="newTodo">
+    <form className='flex'>
+      <div className="newTodo flex">
         <input
           type="text"
           className="todo-input"
@@ -36,7 +36,7 @@ const AddItem = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
           value={inputText}
         />
         <button type="submit" onClick={submitHandler}>
-          <i className="fas fa-plus-square fa-3x"></i>
+          <i className="fas fa-plus-square fa-3x add-btn"></i>
         </button>
       </div>
       <div className="filter">

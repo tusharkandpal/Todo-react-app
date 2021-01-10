@@ -3,8 +3,7 @@ import TodoItem from "./TodoItem";
 
 const TodosList = ({ todos, setTodos, filteredTodos }) => {
   return (
-    <div className="todo-container">
-      <ul className="todo-list neu">
+      <ul className="todo-list">
         {filteredTodos.map((todo) => (
           <TodoItem
             todo={todo}
@@ -14,7 +13,6 @@ const TodosList = ({ todos, setTodos, filteredTodos }) => {
           />
         ))}
       </ul>
-    </div>
   );
 };
 
