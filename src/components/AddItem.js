@@ -8,17 +8,16 @@ const AddItem = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
   function submitHandler(e) {
     e.preventDefault();
     if (inputText === "")
-    alert("Please enter a TODO");
+      alert("Please enter a TODO");
 
-    else
-    {
+    else {
       setTodos([
         ...todos,
-        { id: Math.random() * 1000, desc: inputText, completed: false }
+        { id: Math.random() * 1000, desc: inputText, completed: false, createdDate: new Date() }
       ]);
       setInputText("");
     }
-    
+
   }
 
   const statusHandler = (e) => {
@@ -35,17 +34,15 @@ const AddItem = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
           onChange={textHandler}
           value={inputText}
         />
-        <button type="submit" onClick={submitHandler}>
-          <i className="fas fa-plus-square fa-3x add-btn"></i>
-        </button>
+        <p type="submit" onClick={submitHandler} className="btn">
+          ➕
+        </p>
       </div>
-      <div className="filter">
-        <select name="todos" className="filter-todo" onChange={statusHandler}>
-          <option value="all">All</option>
-          <option value="completed">Completed</option>
-          <option value="uncompleted">Uncompleted</option>
-        </select>
-      </div>
+      <select name="todos" className="filter" onChange={statusHandler}>
+        <option value="all">All</option>
+        <option value="completed">Completed</option>
+        <option value="uncompleted">Uncompleted</option>
+      </select>
     </form>
   );
 };

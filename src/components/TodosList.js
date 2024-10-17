@@ -2,17 +2,31 @@ import React from "react";
 import TodoItem from "./TodoItem";
 
 const TodosList = ({ todos, setTodos, filteredTodos }) => {
+
+  const completeTodos = filteredTodos.filter(todo => todo.completed);
+
+  const incompleteTodos = filteredTodos.filter(todo => !todo.completed);
+
   return (
-      <ul className="todo-list">
-        {filteredTodos.map((todo) => (
-          <TodoItem
-            todo={todo}
-            key={todo.id}
-            todos={todos}
-            setTodos={setTodos}
-          />
-        ))}
-      </ul>
+    <ul className="todo-list flex flex-direction-column">
+      {incompleteTodos.map((todo) => (
+        <TodoItem
+          todo={todo}
+          key={todo.id}
+          todos={todos}
+          setTodos={setTodos}
+        />
+      ))}
+      {completeTodos.length > 0 && <h3 className="completed-label">Completed</h3>}
+      {completeTodos.map((todo) => (
+        <TodoItem
+          todo={todo}
+          key={todo.id}
+          todos={todos}
+          setTodos={setTodos}
+        />
+      ))}
+    </ul>
   );
 };
 

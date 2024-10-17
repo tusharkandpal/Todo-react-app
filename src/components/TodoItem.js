@@ -1,7 +1,7 @@
 import React from "react";
 
 const TodoItem = ({ todo, todos, setTodos }) => {
-  const completeHandler = () => {
+  const toggleTodoHandler = () => {
     setTodos(
       todos.map((item) => {
         if (todo.id === item.id) return { ...item, completed: !item.completed };
@@ -24,13 +24,16 @@ const TodoItem = ({ todo, todos, setTodos }) => {
     <div className="todo">
       <li className="todo-item" style={todo.completed ? completedStyle : null}>
         {todo.desc}
+        <p className="date-label">- {todo.createdDate.toDateString()}</p>
       </li>
-      <button className="complete-btn" onClick={completeHandler} style={todo.completed ? completedStyle : null}>
-        <i className="fas fa-check fa-2x"></i>
-      </button>
-      <button className="trash-btn" onClick={delHandler}>
-        <i className="fas fa-trash fa-2x"></i>
-      </button>
+      {todo.completed ? <p className="btn complete-btn" onClick={toggleTodoHandler}>
+        ❌
+      </p> : <p className="btn complete-btn" onClick={toggleTodoHandler}>
+        ✔️
+      </p>}
+      <p className="btn trash-btn" onClick={delHandler}>
+        🗑️
+      </p>
     </div>
   );
 };
