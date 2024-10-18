@@ -17,7 +17,6 @@ const TodosList = ({ todos, setTodos, filteredTodos }) => {
           setTodos={setTodos}
         />
       ))}
-      {completeTodos.length > 0 && <h3 className="completed-label">Completed</h3>}
       {completeTodos.map((todo) => (
         <TodoItem
           todo={todo}

@@ -8,11 +8,9 @@
   outline: none;
   border: none;
 }
-
 :root {
   font-size: 16px;
 }
-
 body {
   color: #f0f0f0;
   background-color: #2c2c2c;
@@ -20,7 +18,7 @@ body {
 
 /* Class Utilities */
 .btn {
-  margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+  margin: 0 0.3rem;
   cursor: pointer;
   font-size: 20px;
   border-radius: 5px;
@@ -31,6 +29,7 @@ body {
 }
 .flex {
   display: flex;
+  gap: 0.5rem;
   align-items: center;
   justify-content: center;
 }
@@ -46,19 +45,11 @@ h2 {
   padding: 10px;
   font-size: 40px;
 }
-form input {
-  width: 300px;
-  height: 30px;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-li {
-  width: 200px;
-  word-wrap: break-word;
-  margin: 3px;
-}
 
 /* Other classes */
+.todo-form {
+  margin: 0.5rem;
+}
 .todo-list {
   list-style: none;
   margin-top: 30px;
@@ -69,10 +60,22 @@ li {
   border-radius: 5px;
   padding: 5px;
   border: 2px solid white;
+  padding: 0.5rem;
   align-items: center;
 }
-form {
-  margin: 8px;
+.todo-details {
+  margin-right: 1rem;
+}
+.todo-input {
+  width: 250px;
+  height: 30px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.todo-item {
+  width: 200px;
+  word-wrap: break-word;
+  margin: 3px;
 }
 .filter {
   margin-left: 50px;
@@ -84,18 +87,12 @@ form {
   font-style: italic;
   margin: 0.5rem 0 0 0.5rem;
 }
-.completed-label {
-  margin: 1.5rem 0 0.5rem 0;
-}
 
 @media screen and (max-width: 530px) {
-  form {
+  .todo-form {
     flex-direction: column;
   }
-  form input {
-    width: 250px;
-  }
-  li {
+  .todo-item {
     width: 180px;
   }
   .filter {

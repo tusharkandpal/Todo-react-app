@@ -1,19 +1,18 @@
 import React from "react";
 
 const AddItem = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
-  function textHandler(e) {
+  function inputHandler(e) {
     setInputText(e.target.value);
   }
 
-  function submitHandler(e) {
-    e.preventDefault();
+  function submitHandler() {
     if (inputText === "")
       alert("Please enter a TODO");
 
     else {
       setTodos([
         ...todos,
-        { id: Math.random() * 1000, desc: inputText, completed: false, createdDate: new Date() }
+        { id: Math.random() * 1000, description: inputText, completed: false, createdDate: new Date().toDateString(), mode: "read" }
       ]);
       setInputText("");
     }
@@ -24,17 +23,17 @@ const AddItem = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
     setStatus(e.target.value);
   };
   return (
-    <form className='flex'>
-      <div className="newTodo flex">
+    <form className='todo-form flex'>
+      <div className="new-todo flex">
         <input
           type="text"
           className="todo-input"
           name="textInput"
           placeholder="Add a TODO"
-          onChange={textHandler}
+          onChange={inputHandler}
           value={inputText}
         />
-        <p type="submit" onClick={submitHandler} className="btn">
+        <p onClick={submitHandler} className="btn">
           ➕
         </p>
       </div>
