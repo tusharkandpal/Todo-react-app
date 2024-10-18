@@ -5,10 +5,11 @@ const AddItem = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
     setInputText(e.target.value);
   }
 
-  function submitHandler() {
+  function submitHandler(e) {
+    e.preventDefault();
+
     if (inputText === "")
       alert("Please enter a TODO");
-
     else {
       setTodos([
         ...todos,
@@ -16,7 +17,6 @@ const AddItem = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
       ]);
       setInputText("");
     }
-
   }
 
   const statusHandler = (e) => {
@@ -33,7 +33,7 @@ const AddItem = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
           onChange={inputHandler}
           value={inputText}
         />
-        <button onClick={submitHandler} className="btn">
+        <button type="submit" onClick={submitHandler} className="btn">
           ➕
         </button>
       </div>
