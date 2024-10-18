@@ -33,9 +33,9 @@ const AddItem = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
           onChange={inputHandler}
           value={inputText}
         />
-        <p onClick={submitHandler} className="btn">
+        <button onClick={submitHandler} className="btn">
           ➕
-        </p>
+        </button>
       </div>
       <select name="todos" className="filter" onChange={statusHandler}>
         <option value="all">All</option>

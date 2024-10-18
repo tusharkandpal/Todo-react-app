@@ -58,22 +58,22 @@ const TodoItem = ({ todo, todos, setTodos }) => {
       </div>
       {todo.mode === "read" ? <>
         {
-          todo.completed ? <p className="btn incomplete-btn" onClick={toggleTodoHandler} title="Incomplete">
-            ❌
-          </p> :
+          todo.completed ? <button className="btn incomplete-btn" onClick={toggleTodoHandler} title="Incomplete">
+            🔄
+          </button> :
             <>
-              <p className="btn edit-btn" onClick={() => toggleModeHandler("edit")} title="Edit">✏️</p>
-              <p className="btn complete-btn" onClick={toggleTodoHandler} title="Complete">
+              <button className="btn edit-btn" onClick={() => toggleModeHandler("edit")} title="Edit">✏️</button>
+              <button className="btn complete-btn" onClick={toggleTodoHandler} title="Complete">
                 ✔️
-              </p>
+              </button>
             </>
         }
-        < p className="btn trash-btn" onClick={deleteHandler} title="Delete">
-          🗑️
-        </p>
+        <button className="btn trash-btn" onClick={deleteHandler} title="Delete">
+          ❌
+        </button>
       </> : <>
-        <p className="btn complete-btn" onClick={updateTodoHandler} title="Update">✔️</p>
-        <p className="btn complete-btn" onClick={() => toggleModeHandler("read")} title="Cancel">❌</p>
+        <button className="btn update-btn" onClick={updateTodoHandler} title="Update">✔️</button>
+        <button className="btn cancel-btn" onClick={() => toggleModeHandler("read")} title="Cancel">🔙</button>
       </>
       }
 
